@@ -1,0 +1,690 @@
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<div class="swc-wrap">
+<style>
+   .swc-wrap{
+     --hero-image-url:url('HERO_img.jpg');
+     font-family:'Malgun Gothic','맑은 고딕',Arial,sans-serif;
+     width:100%;
+     max-width:980px;
+     margin:0 auto;
+     color:#1f2937;
+     background:#f8fafc;
+     border:2px solid #d1d5db;
+     overflow:hidden;
+   }
+   .swc-hero{
+     position:relative;
+     padding:42px 46px 38px;
+     color:#fff;
+     background-image:linear-gradient(rgba(17,24,39,.35),rgba(17,24,39,.35)),var(--hero-image-url);
+     background-size:cover;
+     background-position:center;
+     background-repeat:no-repeat;
+     overflow:hidden;
+   }
+   .swc-hero-inner{position:relative;z-index:1;}
+   .swc-badge{
+     display:inline-block;
+     padding:8px 16px;
+     border-radius:999px;
+     background:rgba(255,255,255,.2);
+     border:1px solid rgba(255,255,255,.35);
+     font-size:14px;
+     font-weight:700;
+     letter-spacing:.3px;
+     margin-bottom:18px;
+   }
+
+   .swc-title{
+     font-size:38px;
+     line-height:1.2;
+     font-weight:900;
+     margin:0 0 10px;
+   }
+   .swc-sub{
+     font-size:18px;
+     line-height:1.6;
+     margin:0;
+     color:#f3f4f6;
+   }
+   .swc-section{
+     padding:28px 46px;
+     background:#fff;
+   }
+   .swc-section.alt{background:#f8fafc;}
+   .swc-heading{
+     font-size:24px;
+     font-weight:900;
+     margin:0 0 16px;
+     color:#111827;
+   }
+   .swc-grid{
+     display:grid;
+     grid-template-columns:repeat(2,1fr);
+     gap:14px;
+   }
+   .swc-card{
+     background:#fff;
+     border:1px solid #dbeafe;
+     border-radius:14px;
+     padding:20px 18px;
+   }
+   .swc-card-link{
+     display:block;
+     text-decoration:none;
+     color:inherit;
+     cursor:pointer;
+   }
+   .swc-apply-flow{
+     display:flex;
+     align-items:stretch;
+     gap:0;
+     flex-wrap:nowrap;
+     justify-content:center;
+     margin-top:18px;
+   }
+   .swc-apply-step{
+     flex:1;
+     padding:18px 10px;
+     background:#eff6ff;
+     border:1px solid #dbeafe;
+     border-radius:14px;
+     text-align:center;
+     font-weight:800;
+     font-size:15px;
+     color:#1d4ed8;
+     white-space:nowrap;
+     display:flex;
+     align-items:center;
+     justify-content:center;
+   }
+   .swc-apply-arrow{
+     font-size:20px;
+     color:#94a3b8;
+     padding:0 4px;
+     font-weight:700;
+     flex-shrink:0;
+     display:flex;
+     align-items:center;
+   }
+   .swc-apply-note{
+     margin-top:18px;
+     padding:20px 24px;
+     background:#eff6ff;
+     border-left:5px solid #60a5fa;
+     border-radius:14px;
+     font-weight:700;
+     font-size:16px;
+     color:#1d4ed8;
+     text-align:center;
+   }
+   .swc-deadline-banner{
+     margin:0;
+     padding:16px 30px;
+     background:linear-gradient(90deg,#0f4c81,#2563eb);
+     color:#fff;
+     text-align:center;
+     font-size:16px;
+     font-weight:900;
+     letter-spacing:.3px;
+   }
+   .swc-deadline-banner b{
+     font-size:18px;
+     text-decoration:underline;
+     text-underline-offset:4px;
+    color:#fde68a;
+    text-decoration-color:#fde68a;
+   }
+   .swc-icon{
+     font-size:34px;
+     margin-bottom:12px;
+   }
+   .swc-card h3{
+     margin:0 0 10px;
+     font-size:18px;
+     color:#111827;
+   }
+   .swc-card p{
+     margin:0;
+     font-size:14px;
+     line-height:1.6;
+     color:#475569;
+   }
+   .swc-card .swc-count{
+     display:inline-block;
+     margin-top:10px;
+     padding:4px 12px;
+     border-radius:999px;
+     background:#eef2ff;
+     color:#4f46e5;
+     font-size:13px;
+     font-weight:700;
+   }
+   .swc-list{
+     display:grid;
+     grid-template-columns:1fr;
+     gap:10px;
+     margin-top:8px;
+   }
+   .swc-list div{
+     padding:14px 20px;
+     background:#eef2ff;
+     border-left:5px solid #4f46e5;
+     border-radius:12px;
+     font-weight:700;
+     font-size:15px;
+   }
+   .swc-course-section{
+     margin-bottom:20px;
+   }
+   .swc-course-title{
+     font-size:20px;
+     font-weight:800;
+     color:#1d4ed8;
+     margin:0 0 14px;
+     padding-bottom:10px;
+     border-bottom:2px solid #dbeafe;
+   }
+   .swc-course-grid{
+     display:grid;
+     grid-template-columns:repeat(2,1fr);
+     gap:8px;
+   }
+   .swc-course-item{
+     padding:12px 16px;
+     background:#fff;
+     border:1px solid #dbeafe;
+     border-radius:10px;
+     font-size:14px;
+     line-height:1.45;
+     color:#374151;
+   }
+   .swc-course-item strong{
+     color:#111827;
+     font-size:15px;
+   }
+   .swc-course-link{
+     color:inherit;
+     text-decoration:none;
+   }
+
+
+   .swc-flow{
+     display:flex;
+     gap:14px;
+     flex-wrap:wrap;
+   }
+   .swc-step{
+     flex:1;
+     min-width:130px;
+     background:#eff6ff;
+     border:1px solid #dbeafe;
+     border-radius:18px;
+     padding:20px 14px;
+     text-align:center;
+     font-weight:800;
+     font-size:14px;
+     position:relative;
+   }
+   .swc-step span{
+     display:block;
+     font-size:12px;
+     color:#2563eb;
+     margin-bottom:8px;
+     font-weight:700;
+   }
+   .swc-step small{
+     display:block;
+     font-size:11px;
+     color:#6b7280;
+     font-weight:600;
+     margin-top:4px;
+   }
+   .swc-info-box{
+     display:grid;
+     grid-template-columns:repeat(4,1fr);
+     gap:12px;
+     margin-top:12px;
+   }
+   .swc-info-item{
+     padding:14px;
+     background:#eef2ff;
+     border:1px solid #c7d2fe;
+     border-radius:14px;
+     text-align:center;
+   }
+   .swc-info-item .swc-info-label{
+     font-size:14px;
+     color:#6b7280;
+     margin-bottom:6px;
+   }
+   .swc-info-item .swc-info-value{
+     font-size:22px;
+     font-weight:900;
+     color:#1d4ed8;
+   }
+   .swc-cta{
+     text-align:center;
+     padding:32px 30px 38px;
+     background:#0f4c81;
+     color:#fff;
+   }
+   .swc-cta h2{
+     margin:0 0 12px;
+     font-size:30px;
+   }
+   .swc-cta p{
+     margin:0 0 26px;
+     color:#d1d5db;
+     font-size:17px;
+   }
+   .swc-btn{
+     display:inline-block;
+     padding:16px 44px;
+     border-radius:999px;
+     background:#1d4ed8;
+     color:#fff !important;
+     text-decoration:none;
+     font-size:19px;
+     font-weight:900;
+   }
+
+   .swc-phase-table{
+     width:100%;
+     border-collapse:separate;
+     border-spacing:0;
+     border-radius:14px;
+     overflow:hidden;
+     margin-top:18px;
+     font-size:14px;
+   }
+   .swc-phase-table th{
+     background:#1d4ed8;
+     color:#fff;
+     padding:14px 18px;
+     font-weight:700;
+     font-size:15px;
+     text-align:center;
+   }
+   .swc-phase-table td{
+     padding:14px 18px;
+     text-align:center;
+     border-bottom:1px solid #e5e7eb;
+     font-weight:600;
+     font-size:15px;
+   }
+   .swc-phase-table tr:nth-child(even) td{background:#f8fafc;}
+   .swc-phase-table tr:last-child td{border-bottom:none;}
+   .swc-phase-active{
+     background:#dbeafe !important;
+     color:#4f46e5;
+     font-weight:800;
+   }
+</style>
+
+<!-- ===== HERO ===== -->
+<div class="swc-hero">
+<div class="swc-hero-inner">
+<div class="swc-badge">🚀 2026 SW College 2차 과정 OPEN</div>
+<h1 class="swc-title">SW College Udemy<br>2차 교육 과정 안내</h1>
+<p class="swc-sub">
+       AI활용 · DevOps · Web&Cloud · Embedded · Security까지<br>
+       총 <b>42개 과정</b> · Udemy e-Learning으로 언제 어디서나 학습하세요.
+</p>
+</div>
+</div>
+
+<!-- ===== 마감 공지 배너 ===== -->
+<div class="swc-deadline-banner">
+🚨 신청마감 <b>6월 4일(목) 23:59</b> 까지 러닝넷(LMS) 신청을 완료해야 합니다!
+</div>
+
+<!-- ===== 교육 개요 ===== -->
+<div class="swc-section">
+<h2 class="swc-heading">📋 교육 개요</h2>
+<div class="swc-info-box">
+<div class="swc-info-item">
+  <div class="swc-info-label">교육 기간</div>
+  <div class="swc-info-value">6/8 ~ 9/11</div>
+</div>
+<div class="swc-info-item">
+  <div class="swc-info-label">총 과정 수</div>
+  <div class="swc-info-value">42개</div>
+</div>
+<div class="swc-info-item">
+  <div class="swc-info-label">교육 형태</div>
+  <div class="swc-info-value">e-Learning</div>
+</div>
+<div class="swc-info-item">
+  <div class="swc-info-label">교육 사이트</div>
+  <div class="swc-info-value">Udemy</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 신청 방법 ===== -->
+<div class="swc-section alt">
+<h2 class="swc-heading">🖱️ 신청 방법</h2>
+<div class="swc-apply-flow">
+  <div class="swc-apply-step">EP 접속</div>
+  <span class="swc-apply-arrow">▶</span>
+  <div class="swc-apply-step">HR</div>
+  <span class="swc-apply-arrow">▶</span>
+  <div class="swc-apply-step">Learning</div>
+  <span class="swc-apply-arrow">▶</span>
+  <div class="swc-apply-step">과정명 검색</div>
+  <span class="swc-apply-arrow">▶</span>
+  <div class="swc-apply-step">Class 신청</div>
+</div>
+<div class="swc-apply-note">🚨 <b>신청마감: 6월 4일(목) 23:59</b> 까지 러닝넷(LMS) 신청을 완료해야 합니다!</div>
+</div>
+
+<!-- ===== 추천 대상 ===== -->
+<div class="swc-section">
+<h2 class="swc-heading">💡 이런 분들께 추천합니다</h2>
+<div class="swc-list">
+<div>AI·생성형AI 활용 및 SW프로그래밍 역량인증시험을 준비하는 분</div>
+<div>DevOps, 아키텍처 설계, 테스트 자동화를 배우고 싶은 분</div>
+<div>Web, Cloud, Embedded 등 최신 기술을 익히고 싶은 분</div>
+<div>보안(Security) 실무 역량 및 커리어 개발에 관심 있는 분</div>
+</div>
+</div>
+
+<!-- ===== 교육 분야 카드 ===== -->
+<div class="swc-section">
+<h2 class="swc-heading">🎯 교육 분야 (8개 카테고리 · 42개 과정)</h2>
+<div class="swc-grid">
+
+<a class="swc-card-link" href="#sec-ai">
+<div class="swc-card">
+<div class="swc-icon">🤖</div>
+<h3>AI / AI활용</h3>
+<p>생성형AI Agent, ChatGPT, Copilot, 프롬프트 엔지니어링, RAG 챗봇, 바이브 코딩, 딥러닝·머신러닝 개론</p>
+<div class="swc-count">13개 과정 ▼</div>
+</div>
+</a>
+
+<a class="swc-card-link" href="#sec-cert">
+<div class="swc-card">
+<div class="swc-icon">📝</div>
+<h3>역량인증시험</h3>
+<p>SW프로그래밍 역량인증시험 대비 C/C++, Java, Python, 최신 기출문제 따라풀기</p>
+<div class="swc-count">4개 과정 ▼</div>
+</div>
+</a>
+
+<a class="swc-card-link" href="#sec-devops">
+<div class="swc-card">
+<div class="swc-icon">⚙️</div>
+<h3>DevOps</h3>
+<p>Agile PM, DevOps Fundamental, 아키텍처 설계(C++/Python), 테스트 자동화, 프로젝트 관리</p>
+<div class="swc-count">9개 과정 ▼</div>
+</div>
+</a>
+
+<a class="swc-card-link" href="#sec-webcloud">
+<div class="swc-card">
+<div class="swc-icon">🌐</div>
+<h3>Web & Cloud</h3>
+<p>React, Flutter, Go 웹 개발, AWS AI Practitioner, 쿠버네티스, EKS·Argo CD 자동화</p>
+<div class="swc-count">6개 과정 ▼</div>
+</div>
+</a>
+
+<a class="swc-card-link" href="#sec-embedded">
+<div class="swc-card">
+<div class="swc-icon">🔧</div>
+<h3>Embedded / webOS</h3>
+<p>임베디드 기초, Linux-Yocto, On-device AI, LUPA 앱 개발, webOS Native 서비스 개발</p>
+<div class="swc-count">5개 과정 ▼</div>
+</div>
+</a>
+
+<a class="swc-card-link" href="#sec-security">
+<div class="swc-card">
+<div class="swc-icon">🔐</div>
+<h3>Security</h3>
+<p>Cyber Security 기본, 웹&네트워크 보안 실무, 보안 설계·구현·검증(암호학, fuzz, 악성코드)</p>
+<div class="swc-count">3개 과정 ▼</div>
+</div>
+</a>
+
+<a class="swc-card-link" href="#sec-career">
+<div class="swc-card">
+<div class="swc-icon">💼</div>
+<h3>Career Development</h3>
+<p>SW 개발자 2막 설계, 개발자 브랜딩·커뮤니케이션·스타일·재테크</p>
+<div class="swc-count">2개 과정 ▼</div>
+</div>
+</a>
+
+<a class="swc-card-link" href="#sec-ai">
+<div class="swc-card">
+<div class="swc-icon">💡</div>
+<h3>Light 과정</h3>
+<p>1학점 · 짧은 시간 핵심 학습! Ollama, 프롬프트 엔지니어링, 바이브 코딩, ChatGPT-5, 시계열 분석 등</p>
+<div class="swc-count">7개 과정 ▼</div>
+</div>
+</a>
+
+</div>
+</div>
+
+<!-- ===== 전체 과정 목록 ===== -->
+<div class="swc-section">
+<h2 class="swc-heading">📚 전체 과정 목록</h2>
+
+<!-- AI / AI활용 -->
+<div id="sec-ai" class="swc-course-section">
+<div class="swc-course-title">🤖 AI / AI활용 (13개 과정)</div>
+<div class="swc-course-grid">
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3213216416" target="_blank" rel="noopener noreferrer"><strong>초보자도 쉽게 따라하는 딥러닝 개론</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3213216399" target="_blank" rel="noopener noreferrer"><strong>초보자도 쉽게 따라하는 머신러닝 개론</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3220373836" target="_blank" rel="noopener noreferrer"><strong>개발 생산성을 확! 끌어올리는 AI 프로그래밍</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3216723961" target="_blank" rel="noopener noreferrer"><strong>업무 효율을 확! 끌어올리는 AI Technical Writing</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3217483360" target="_blank" rel="noopener noreferrer"><strong>업무 효율을 확! 끌어올리는 ChatGPT 프롬프트 마스터 클래스</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2867189663" target="_blank" rel="noopener noreferrer"><strong>업무 효율을 확! 끌어올리는 MS365 Copilot 프롬프트 마스터 클래스</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3216721524" target="_blank" rel="noopener noreferrer"><strong>업무 효율을 확! 끌어올리는 생성형AI Agent 마스터 코스</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3527215440" target="_blank" rel="noopener noreferrer"><strong>Ollama (로컬 LLM) 완전 정복</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3213211776" target="_blank" rel="noopener noreferrer"><strong>가볍게! 시작하는 시계열 분석 기초</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3216723228" target="_blank" rel="noopener noreferrer"><strong>가볍게! 시작하는 프롬프트 엔지니어링</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3216717211" target="_blank" rel="noopener noreferrer"><strong>내부 데이터 활용 RAG 기반 챗봇 맛보기!</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3220385220" target="_blank" rel="noopener noreferrer"><strong>바이브 코딩? AI에 몸을 맡겨.. 코드를 완성해보자</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3357385292" target="_blank" rel="noopener noreferrer"><strong>최신강좌. ChatGPT-5 실무 적용하기</strong></a>
+  </div>
+</div>
+</div>
+
+<!-- 역량인증시험 -->
+<div id="sec-cert" class="swc-course-section">
+<div class="swc-course-title">📝 역량인증시험 (4개 과정)</div>
+<div class="swc-course-grid">
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/spaces/SWC/pages/3493464353/Online+SW%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D+%EC%97%AD%EB%9F%89%EC%9D%B8%EC%A6%9D%EC%8B%9C%ED%97%98+%EC%B5%9C%EC%8B%A0+%EA%B8%B0%EC%B6%9C%EB%AC%B8%EC%A0%9C+%EB%94%B0%EB%9D%BC%ED%92%80%EA%B8%B0" target="_blank" rel="noopener noreferrer"><strong>SW프로그래밍 역량인증시험 최신 기출문제 따라풀기</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2853760481" target="_blank" rel="noopener noreferrer"><strong>SW프로그래밍 역량인증시험 합격까지_C/C++</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3493464294" target="_blank" rel="noopener noreferrer"><strong>SW프로그래밍 역량인증시험 합격까지_Java</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3493463878" target="_blank" rel="noopener noreferrer"><strong>SW프로그래밍 역량인증시험 합격까지_Python</strong></a>
+  </div>
+</div>
+</div>
+
+<!-- DevOps -->
+<div id="sec-devops" class="swc-course-section">
+<div class="swc-course-title">⚙️ DevOps (9개 과정)</div>
+<div class="swc-course-grid">
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3452347193" target="_blank" rel="noopener noreferrer"><strong>손에 잡히는 Agile Project Management : Requirements, Planning and Tracking</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2876933305" target="_blank" rel="noopener noreferrer"><strong>손에 잡히는 DevOps Fundamental</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2853741567" target="_blank" rel="noopener noreferrer"><strong>손에 잡히는 SW 개발 프로젝트 매니지먼트 : 기초부터 도구 사용과 사람관리까지</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2853747567" target="_blank" rel="noopener noreferrer"><strong>손에 잡히는 소프트웨어 아키텍처 설계_C++</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2853747567" target="_blank" rel="noopener noreferrer"><strong>손에 잡히는 소프트웨어 아키텍처 설계_Python</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2853736415" target="_blank" rel="noopener noreferrer"><strong>손에 잡히는 테스트 이론 및 Unit Test : Google Test & Google mock</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3474005856" target="_blank" rel="noopener noreferrer"><strong>손에 잡히는 프로젝트 리스크 관리 - 프로젝트 성패의 키</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3354910422" target="_blank" rel="noopener noreferrer"><strong>손에 잡히는 '프로젝트를 움직이는 힘' 협업·소통·공감의 기술</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2853748806" target="_blank" rel="noopener noreferrer"><strong>손에 잡히는 테스트 자동화 기초 : Python 기본부터 SQL까지</strong></a>
+  </div>
+</div>
+</div>
+
+<!-- Web & Cloud -->
+<div id="sec-webcloud" class="swc-course-section">
+<div class="swc-course-title">🌐 Web & Cloud (6개 과정)</div>
+<div class="swc-course-grid">
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3455912573" target="_blank" rel="noopener noreferrer"><strong>쉽게 시작하는 AWS Certified AI Practitioner</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3357383127" target="_blank" rel="noopener noreferrer"><strong>쉽게 시작하는 React</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2853759301" target="_blank" rel="noopener noreferrer"><strong>쉽게 시작하는 코딩의 비밀 : Flutter로 배우는 Speed Up 앱 개발</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2853759276" target="_blank" rel="noopener noreferrer"><strong>쉽게 시작하는 코딩의 비밀 : Go언어로 배우는 확장형 웹 애플리케이션</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2853758919" target="_blank" rel="noopener noreferrer"><strong>쉽게 시작하는 클라우드 인프라 구축 : 쿠버네티스</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2853759215" target="_blank" rel="noopener noreferrer"><strong>쉽게 시작하는 클라우드 인프라 설계 : EKS와 Argo CD로 시작하는 자동화 여정</strong></a>
+  </div>
+</div>
+</div>
+
+<!-- Embedded / webOS -->
+<div id="sec-embedded" class="swc-course-section">
+<div class="swc-course-title">🔧 Embedded / webOS (5개 과정)</div>
+<div class="swc-course-grid">
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3216723984" target="_blank" rel="noopener noreferrer"><strong>실제 업무에 바로 쓸 수 있는 임베디드 기초</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3216724161" target="_blank" rel="noopener noreferrer"><strong>실제 업무에 바로 쓸 수 있는 Linux-Yocto, 쉽게 다루기</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3535099883" target="_blank" rel="noopener noreferrer"><strong>실제 업무에 바로 쓸 수 있는 On-device AI 어플리케이션 이해 및 실습</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2856758287" target="_blank" rel="noopener noreferrer"><strong>리스킬 시작하기 : LUPA 앱 개발자로 커리어 피봇</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2856758281" target="_blank" rel="noopener noreferrer"><strong>리스킬 시작하기 : webOS 개발 프로세스 및 Native서비스 개발</strong></a>
+  </div>
+</div>
+</div>
+
+<!-- Security -->
+<div id="sec-security" class="swc-course-section">
+<div class="swc-course-title">🔐 Security (3개 과정)</div>
+<div class="swc-course-grid">
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2853753110" target="_blank" rel="noopener noreferrer"><strong>개발자가 꼭 알아야 할 Cyber Security 기본 : 글로벌 규제 동향부터 LG SDL 가이드</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2853757183" target="_blank" rel="noopener noreferrer"><strong>개발자가 꼭 알아야 할 웹 & 네트워크 보안 실무</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=2853755544" target="_blank" rel="noopener noreferrer"><strong>실무자가 알려주는 소프트웨어 보안 설계, 구현, 검증 : 암호학, Threat Modeling, Fuzz, 악성코드 분석</strong></a>
+  </div>
+</div>
+</div>
+
+<!-- Career Development -->
+<div id="sec-career" class="swc-course-section">
+<div class="swc-course-title">💼 Career Development (2개 과정)</div>
+<div class="swc-course-grid">
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3354910891" target="_blank" rel="noopener noreferrer"><strong>AI가 내 일을 바꾸기 전에, 내가 나를 바꾼다 (소프트웨어 개발자 2막 설계)</strong></a>
+  </div>
+  <div class="swc-course-item">
+    <a class="swc-course-link" href="http://collab.lge.com/main/pages/viewpage.action?pageId=3354910552" target="_blank" rel="noopener noreferrer"><strong>개발자, 나를 리팩토링하다 : 브랜딩, 커뮤니케이션, 스타일, 재테크</strong></a>
+  </div>
+</div>
+</div>
+
+</div>
+
+<!-- ===== 교육 일정 ===== -->
+<div class="swc-section alt">
+<h2 class="swc-heading">📅 교육 일정</h2>
+<table class="swc-phase-table">
+<tr>
+  <th>구분</th>
+  <th>신청 마감</th>
+  <th>교육 시작</th>
+  <th>교육 종료</th>
+</tr>
+<tr>
+  <td><b>일자</b></td>
+  <td class="swc-phase-active">6/4 (목) 23:59</td>
+  <td>6/8 (월)</td>
+  <td>9/11 (금)</td>
+</tr>
+</table>
+</div>
+
+<!-- ===== 이수 기준 안내 ===== -->
+<div class="swc-section">
+<h2 class="swc-heading">✅ 이수 기준 안내</h2>
+<div style="padding:24px 28px;background:#eef2ff;border:2px solid #c7d2fe;border-radius:18px;text-align:center;">
+<div style="font-size:20px;font-weight:900;color:#1d4ed8;margin-bottom:6px;">📝 Udemy 사후설문 참여 100%</div>
+<div style="font-size:14px;color:#4b5563;️">강의 수강 완료 후 Udemy 사후설문까지 완료해야 이수 처리됩니다.</div>
+</div>
+</div>
+
+<!-- ===== CTA ===== -->
+<div class="swc-cta">
+<h2>지금 SW College 2차 과정에서 시작하세요</h2>
+<p>AI · DevOps · Cloud · Embedded · Security · 총 42개 Udemy 과정이 여러분을 기다립니다</p>
+<p style="color:#fbbf24;font-weight:900;font-size:18px;margin:0 0 22px;">⏰ 신청마감: 6월 4일(목) 23:59 | LMS 신청 필수</p>
+<a class="swc-btn" href="https://lg.lms.sapsf.com/learning/user/personal/landOnPortalHome.do" target="_blank" rel="noopener noreferrer">수강 신청 바로가기</a>
+</div>
+</div>
